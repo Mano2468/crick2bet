@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '@app/_services';
 import * as sha512 from 'js-sha512';
+import { AppData } from '@app/_services/app-data';
+import { ApiFactory } from '@app/_services/api-factory';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './login.component.html',
@@ -14,16 +16,16 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error = '';
-  randomStr:string;
+  randomStr: string;
   constructor(private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private apiFactory: ApiFactory) {
     if (this.authenticationService.userValue) {
       this.router.navigate(['/dashboard']);
     }
-    this.randomStr = this.randomString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    console.log(this.randomStr)
+
   }
 
   ngOnInit() {
@@ -42,27 +44,42 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.error = null;
+    this.randomStr = this.randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    console.log(this.randomStr)
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
 
     this.loading = true;
-    console.log(this.randomStr+this.f.password.value);
-    let encPass = sha512.sha512(this.randomStr+this.f.password.value);
+    console.log(this.randomStr + this.f.password.value);
+    let encPass = sha512.sha512(this.f.password.value);
     console.log(encPass);
-    this.authenticationService.login(this.f.username.value, encPass)
+    this.authenticationService.login(this.f.username.value, this.randomStr + encPass)
       .subscribe(
         data => {
-          if(data.status == "success"){
+          if (data.status == "success") {
             this.router.navigate(['/dashboard']);
-          }this.router.navigate([this.returnUrl]);this.loading = false; this.error = data.message;
-          
+            this.getMasterData();
+          } else{this.router.navigate([this.returnUrl]); this.loading = false; this.error = data.message;}
+
         },
         error => {
           this.error = error;
           this.loading = false;
         });
+  }
+  getMasterData() {
+    this.apiFactory.getMasterData()
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('masterData', JSON.stringify(res.nbdata));
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
   dashBoard() {
     this.router.navigate(['/dashboard']);

@@ -30,7 +30,7 @@ export class AuthenticationService {
             .pipe(map(user => {
                 //local storage to keep user logged in between page refreshes
                 if(user.status=="success"){
-                    localStorage.setItem('user', JSON.stringify(user));
+                    localStorage.setItem('user', JSON.stringify(user.logindata));
                     this.userSubject.next(user.logindata);
                     return user;
                 }else{

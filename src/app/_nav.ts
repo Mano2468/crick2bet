@@ -16,6 +16,11 @@ export const navItems: INavData[] = [
     icon: 'icon-social-dribbble',
   },
   {
+    name: "Users",
+    url: '/users',
+    icon: 'icon-people'
+  },
+  {
     name: 'Pages',
     url: '/pages',
     icon: 'icon-star',
@@ -42,9 +47,7 @@ export const navItems: INavData[] = [
       }
     ]
   },
-  {
-    divider: true
-  },
+
   {
     name: 'Disabled',
     url: '/dashboard',

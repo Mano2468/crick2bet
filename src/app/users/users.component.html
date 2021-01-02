@@ -1,0 +1,60 @@
+
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="col-6 col-sm-4 col-md-2 mb-3 mb-xl-0 mt-2 ml-1">
+                <button type="button" class="btn btn-block btn-primary active" aria-pressed="true" (click)="createUser()">Create User</button>
+            </div>
+            <!-- <div class="card-header">
+               
+            </div> -->
+            <div class="card-body">
+              <table class="table table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                      <th>Sl No.</th>
+                    <th>Name</th>
+                    <th>Login Id</th>
+                    <th>Phone No.</th>
+                    <th>User Type</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of userList; let i = index">  
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.user_login_id}}</td>
+                    <td>{{item.user_phone}}</td>
+                    <td>{{getUserType(item.user_type)}}</td>
+                    <td>{{item.address}}</td>
+                    <td >
+                      <span class="badge badge-success mr4">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav> -->
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+
+     
+  </div>
+  
+  

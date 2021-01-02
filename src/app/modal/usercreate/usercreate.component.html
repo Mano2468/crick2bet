@@ -1,0 +1,70 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    
+        <form [formGroup]="createUser" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+            <input type="text" class="form-control input-sm" formControlName="user_name" [ngClass]="{ 'is-invalid': submitted && f.user_name.errors }" placeholder="User Name">
+            <div *ngIf="submitted && f.user_name.errors" class="invalid-feedback">
+                <div *ngIf="f.user_name.errors.required">Username is required</div>
+            </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control input-sm" placeholder="User Phone"
+                        formControlName="user_phone" [ngClass]="{ 'is-invalid': submitted && f.user_phone.errors }">
+                        <div *ngIf="submitted && f.user_phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.user_phone.errors.required">Phone no. is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <select id="select1" name="select1" class="form-control" formControlName="user_type">
+                            <option value="">Select</option>
+                            <option *ngFor="let u of user_type" value="{{u.id}}">{{u.name}}</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="password" formControlName="user_password" class="form-control input-sm" placeholder="Password" 
+                        formControlName="user_password" [ngClass]="{ 'is-invalid': submitted && f.user_password.errors }">
+                        
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" formControlName="address" class="form-control input-sm" placeholder="Address" 
+                        formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="user_login_id" class="form-control input-sm" placeholder="Login Id" 
+                formControlName="user_login_id" [ngClass]="{ 'is-invalid': submitted && f.user_login_id.errors }">
+            </div>
+            <!-- <div class="form-group">
+                <input type="text" name="address"  class="form-control input-sm" placeholder="Address">
+            </div> -->
+            <!-- <input type="submit" value="Register" class="btn btn-info btn-block"> -->
+            <div class="col-4 col-sm-4">
+                <button  style="margin-left: -16px;" [disabled]="loading" type="submit" class="btn btn-block btn-primary active"> 
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> Submit</button>
+            </div>
+        
+        </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+</div>

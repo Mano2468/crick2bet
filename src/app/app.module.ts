@@ -44,6 +44,8 @@ import { ChartsModule } from 'ng2-charts';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppData } from './_services/app-data';
+import { ApiFactory } from './_services/api-factory';
 @NgModule({
   imports: [
     BrowserModule,
@@ -71,6 +73,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     RegisterComponent,
   ],
   providers: [
+    AppData,
+    ApiFactory,
     // {provide: LocationStrategy,useClass: HashLocationStrategy}
   ],
   bootstrap: [ AppComponent ]

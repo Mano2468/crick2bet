@@ -6,5 +6,5 @@ export class User {
     type: string;
     username: string;
     usertype: string;
-    token?: string;
+    sessionid?: string;
 }
