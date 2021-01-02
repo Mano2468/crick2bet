@@ -28,9 +28,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@coreui/icons/css/coreui-icons.css",
+              "node_modules/flag-icon-css/css/flag-icon.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/simple-line-icons/dist/styles/simple-line-icons.css",
+              "src/scss/style.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            },
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/chart.js/dist/Chart.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,13 +65,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "15mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 }
               ]
             }
@@ -91,10 +105,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.min.js"
             ],
-            "scripts": []
+            "styles": [
+              "node_modules/flag-icon-css/css/flag-icon.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/simple-line-icons/dist/styles/simple-line-icons.css",
+              "src/scss/style.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            }
           }
         },
         "lint": {
@@ -123,6 +147,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crick2bet"
+    }
+  },
+  "defaultProject": "crick2bet",
+  "cli": {
+    "analytics": false
+  }
 }

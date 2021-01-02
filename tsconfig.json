@@ -11,6 +11,14 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"

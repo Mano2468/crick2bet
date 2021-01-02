@@ -1,0 +1,183 @@
+.betSlipBox {
+    width: 100%;
+    float: left;
+}
+.betslip-head {
+    margin-bottom: 5px;
+    background: #f7c227;
+    color: #010101;
+    font-size: 15px;
+    width: 100%;
+    float: left;
+    display: flex;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.betslip-head #tital_change {
+    padding: 8px 5px;
+    flex: 1;
+    text-align: center;
+}
+#tital_change {
+    font-size: 15px;
+    display: inline-block;
+    float: left;
+}
+.betslip-head a {
+    color: #000;
+    float: right;
+    padding: 8px;
+    background: #c99d00;
+    flex: 1;
+    text-align: center;
+    border-top-right-radius: 5px;
+}
+.border-box {
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.loader {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    padding: 34px 100px 34px 115px;
+}
+#placeBetSilp {
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #f9f9f9!important;
+    border: solid 2px #233375;
+}
+.BetFor {
+    display: inline-block;
+    width: 30%;
+    font-weight: normal;
+}
+.liabilityprofit {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+}
+.stake_label {
+    min-width: 40px;
+    color: #000;
+    text-align: left;
+    float: left;
+}
+.stack_input_field {
+    width: 100%;
+    float: left;
+}
+#profitData, #LossData {
+    width: 100%;
+    display: inline-block;
+}
+.match_runner_name {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+}
+.odds-stake {
+    display: flex;
+}
+full_rowOdd {
+    margin-right: 7px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.stake_label {
+    min-width: 40px;
+    color: #000;
+    text-align: left;
+    float: left;
+}
+.numbers-row {
+    position: relative;
+}
+.stack_input_field {
+    width: 100%;
+    float: left;
+}
+.stack_input_field input {
+    padding-left: 35px;
+    height: 33px;
+}
+.inc {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 33px;
+}
+.plus_btn {
+    text-indent: -9999px;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    right: 4px;
+}
+.dec {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    height: 33px;
+}
+.betPriceBox, .betFooter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}.betPriceBox button.btn, .betFooter button.btn {
+    padding: 4px 8px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+.betPriceBox .btn-success {
+    background: #233375;
+    border-radius: 2px;
+    border-color: #233375;
+}
+.betPriceBox button {
+    padding: 2px 7px;
+    margin-right: 2px;
+}
+.betFooter button.btn {
+    margin-top: 5px;
+    border-radius: 2px;
+    border: transparent;
+    padding: 8px 8px;
+}
+.betPriceBox button.btn, .betFooter button.btn {
+    padding: 4px 8px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+.betFooter .btn-danger {
+    background: #e61414;
+}
+.dec img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+}
+.inc img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+}
