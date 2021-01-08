@@ -42,17 +42,48 @@ export class ApiFactory {
         return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=1').pipe(map(res => res));
     }
 
-    createUser(data):Observable<any> {
+    createUser(data): Observable<any> {
         const formData = new FormData();
-      for(let dataKey in data) {
-        console.log(dataKey);
-          formData.append(dataKey, data[dataKey]);
-      }
-      console.log(formData)
+        for (let dataKey in data) {
+            console.log(dataKey);
+            formData.append(dataKey, data[dataKey]);
+        }
+        console.log(formData)
         return this.postUrl(`${environment.apiUrl}` + '/masterset.php?flag=2', formData).pipe(map(res => res));
     }
-    getUser(id):Observable<any>{
-        console.log(id);
-        return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=3&userid='+id).pipe(map(res => res));
+    getUser(id): Observable<any> {
+        return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=3&userid=' + id).pipe(map(res => res));
     }
+    changeStatus(id, status): Observable<any> {
+        return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=5&userid=' + id + '&userstatus=' + status).pipe(map(res => res));
+    }
+
+    changePassword(data): Observable<any> {
+        const formData = new FormData();
+        for (let dataKey in data) {
+            console.log(dataKey);
+            formData.append(dataKey, data[dataKey]);
+        }
+        console.log(formData)
+        return this.postUrl(`${environment.apiUrl}` + '/masterset.php?flag=4', formData).pipe(map(res => res));
+    }
+
+    wdcFromSubmit(data): Observable<any> {
+        const formData = new FormData();
+        for (let dataKey in data) {
+            console.log(dataKey);
+            formData.append(dataKey, data[dataKey]);
+        }
+        console.log(formData)
+        return this.postUrl(`${environment.apiUrl}` + '/masterset.php?flag=6', formData).pipe(map(res => res));
+    }
+    setMessage(data): Observable<any> {
+
+        return this.postUrl(`${environment.apiUrl}` + '/masterset.php?flag=8', data).pipe(map(res => res));
+    }
+    getMessage(): Observable<any> {
+        return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=7').pipe(map(res => res));
+    }
+
+
 }  

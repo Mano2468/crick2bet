@@ -8,3 +8,117 @@
 // If you want to add something do it here
 @import "custom";
 @import "spinner";
+.app-header .navbar-nav .dropdown-menu-right {
+    right: 10px;
+    left: auto;
+}
+
+.marquee {
+    font-size: 12px;
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #23282c;
+    border-radius: 25px;
+    height: 35px;
+    background: white;
+    padding: 5px;
+    font-weight: 500;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border: solid 2px #ffffff;
+    padding-left: 20px;
+}
+
+.bell {
+    // background: #344db5;
+    // color: #ffffff;
+    top: 4px;
+    width: 25px;
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    line-height: 22px;
+}
+
+.marquee1{
+    font-size: 12px;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #23282c;
+    border-radius: 25px;
+    height: 35px;
+    background: white;
+    padding: 5px;
+    font-weight: 500;
+    float: left;
+    overflow: hidden;
+    border: solid 2px #ffffff;
+    padding-left: 20px;
+}
+.balance{
+    position: relative;
+    background: #ffff;
+    padding: 8px;
+    border-bottom: 1px solid #6c757d;
+}
+.nav-tabs .nav-link{
+    border-color: #c8ced3 ;
+}
+.nav-tabs .nav-link.active {
+    color: #f0f3f5;
+    background: #344db5 !important;
+   
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #c8ced3;
+    background: #fff;
+   
+}
+.nav-tabs > li {
+    width: 120px;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .marquee1{    position: absolute;
+        top: 20%;
+        right: 5%;
+        width: 50%;
+        color: white;
+        background: rgba(25, 25, 189, 0.63);
+    }
+    .nav-tabs.match-buttons li {
+        width: 32%;
+        float: left;
+        margin-left: 3px;
+        background: #fff;
+        border: 1px solid #e2a521;
+        margin-top: 5px;
+        margin-right: 0px;
+        border-radius: 4px 4px 0 0;
+    }
+    .match-buttons.nav>li>a {
+        border: transparent!important;
+        background: transparent!important;
+        color: #043a32;
+        padding: 0px;
+    }
+    .tabs .nav-tabs > li.active {
+        background: #fff;
+    }
+    .item_sport img {
+        width: 100%;
+        display: block;
+    }
+    .game_label {
+        background: #ffc228;
+        padding: 3px;
+        color: #000;
+        display: block;
+        font-size: 12px;
+    }
+    }
+  

@@ -1,0 +1,27 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+         
+          <div class="card">
+            <div class="card-header">
+              <strong>Message </strong> Setting
+            </div>
+            <div class="card-body">
+              <form >
+                <div class="form-group row">
+                    <div class="col-md-12">
+                   <textarea class="form-control" id="textarea-input" [(ngModel)]="message"
+                            name="textarea-input" placeholder="Content.." rows="9" spellcheck="false"></textarea>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-sm btn-primary" (click)="submitMsg()"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+</div>

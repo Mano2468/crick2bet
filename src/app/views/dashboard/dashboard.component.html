@@ -1,15 +1,30 @@
 <div class="animated fadeIn">
-  
- 
-  
+
+
+
   <div class="row">
 
     <div class="col-md-8 mb-6">
-      <!-- Nav tabs -->
-      <tabset type="pills">
-        <tab>
-          <ng-template tabHeading><i class="icon-list"></i> Cricket
-          </ng-template>
+      <ul class="nav nav-tabs match-buttons " id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="cricket-tab" data-toggle="tab" href="#cricket" role="tab" aria-controls="cricket"
+            aria-selected="true">
+            <span class="item_sport d-block d-xl-none">
+              <img src="assets/img/cricket.jpg"></span>
+            <span class="game_label"> Cricket</span></a>
+        </li>
+        <li class="nav-item"> <a class="nav-link" id="tennis-tab" data-toggle="tab" href="#tennis" role="tab"
+            aria-controls="tennis" aria-selected="false"><span class="item_sport d-block d-xl-none"><img
+                src="assets/img/tennis.jpg"></span> <span class="game_label"> Tennis</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" id="soccer-tab" data-toggle="tab" href="#soccer" role="tab"
+            aria-controls="soccer" aria-selected="false"><span class="item_sport d-block d-xl-none"><img
+                src="assets/img/soccers.jpg"></span> <span class="game_label"> Soccer</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" id="casino-tab" data-toggle="tab" href="#casino" role="tab"
+                  aria-controls="casino" aria-selected="false"><span class="item_sport d-block d-xl-none"><img
+                      src="assets/img/casino.jpg"></span> <span class="game_label"> Casino</span></a> </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="cricket" role="tabpanel" aria-labelledby="cricket-tab">
           <div>
             <div id="user_row_" class="lotus-title sportrow-4">
               <div class="head-matchname">
@@ -21,12 +36,10 @@
                 </div>
               </div>
             </div>
-            <div id="user_row_" class="sport_row sportrow-4"  (click)="gotoInnerPage()"
-              title="Match OODS">
+            <div id="user_row_" class="sport_row sportrow-4" (click)="gotoInnerPage()" title="Match OODS">
               <div class="sport_name">
                 <time>13 Sep 2020 15:00:00</time>
-                <span id='fav4261'><i class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav4261'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   Amo Sharks v Boost Defenders </a>
               </div>
@@ -39,8 +52,7 @@
             <div id="user_row_" class="sport_row sportrow-4" title="Match OODS" (click)="gotoInnerPage()">
               <div class="sport_name">
                 <time>20 Sep 2020 19:30:00</time>
-                <span id='fav30000721'><i class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav30000721'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   Delhi Capitals v Kings XI Punjab </a>
               </div>
@@ -50,12 +62,10 @@
               <div class="match_odds_front">
               </div>
             </div>
-            <div id="user_row_" class="sport_row sportrow-4 " (click)="gotoInnerPage()"
-              title="Match OODS">
+            <div id="user_row_" class="sport_row sportrow-4 " (click)="gotoInnerPage()" title="Match OODS">
               <div class="sport_name">
                 <time>21 Sep 2020 19:30:00</time>
-                <span id='fav30000722'><i class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav30000722'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   Sunrisers Hyderabad v Royal Challengers Bangalore </a>
               </div>
@@ -80,8 +90,7 @@
               title="Match OODS">
               <div class="sport_name">
                 <time>21 Sep 2020 22:30:00</time>
-                <span id='fav30015681'><i  class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav30015681'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   England Women v West Indies Women </a>
               </div>
@@ -105,8 +114,7 @@
             <div id="user_row_" class="sport_row sportrow-4" title="Match OODS" (click)="gotoInnerPage()">
               <div class="sport_name">
                 <time>22 Sep 2020 19:30:00</time>
-                <span id='fav30011381'><i class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav30011381'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   Rajasthan Royals v Chennai Super Kings </a>
               </div>
@@ -116,12 +124,10 @@
               <div class="match_odds_front">
               </div>
             </div>
-            <div id="user_row_" class="sport_row sportrow-4  matchrow-30011382"
-              title="Match OODS">
+            <div id="user_row_" class="sport_row sportrow-4  matchrow-30011382" title="Match OODS">
               <div class="sport_name">
                 <time>23 Sep 2020 19:30:00</time>
-                <span id='fav30011382'><i  class='fa fa-star-o'
-                    aria-hidden='true'></i></span>
+                <span id='fav30011382'><i class='fa fa-star-o' aria-hidden='true'></i></span>
                 <a href="javascript:;">
                   Kolkata Knight Riders v Mumbai Indians </a>
               </div>
@@ -132,32 +138,28 @@
               </div>
             </div>
           </div>
-        </tab>
-        <tab>
-          <ng-template tabHeading><i class="icon-calculator"></i> Tennis</ng-template>
-          2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
-        </tab>
-        <tab>
-          <ng-template tabHeading><i class="icon-pie-chart"></i> Soccer</ng-template>
-          3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
-        </tab>
-        <tab>
-          <ng-template tabHeading><i class="icon-pie-chart"></i> Casino</ng-template>
-          4. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
-        </tab>
-      </tabset>
+        </div>
+        <div class="tab-pane fade" id="tennis" role="tabpanel" aria-labelledby="tennis-tab">
+          <h3>tennis</h3>
+          <p>Integer malesuada nunc vel risus commodo. Enim eu turpis egestas pretium aenean pharetra magna. Feugiat in
+            fermentum posuere urna nec tincidunt praesent semper feugiat. Diam vulputate ut pharetra sit amet. At
+            ultrices mi tempus imperdiet.</p>
+        </div>
+        <div class="tab-pane fade" id="soccer" role="tabpanel" aria-labelledby="soccer-tab">
+          <h3>soccer</h3>
+          <p>Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh
+            cras pulvinar mattis. Amet risus nullam eget felis eget nunc lobortis mattis. Lacus viverra vitae congue eu.
+            Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Est placerat in egestas erat imperdiet
+            sed euismod.</p>
+        </div>
+        <div class="tab-pane fade" id="casino" role="tabpanel" aria-labelledby="casino-tab">
+          <h3>casino</h3>
+          <p>Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh
+            cras pulvinar mattis. Amet risus nullam eget felis eget nunc lobortis mattis. Lacus viverra vitae congue eu.
+            Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Est placerat in egestas erat imperdiet
+            sed euismod.</p>
+        </div>
+      </div>
     </div>
     <!--/.col-->
     <div class="col-md-4 mb-6">

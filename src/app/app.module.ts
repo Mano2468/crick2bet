@@ -46,6 +46,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppData } from './_services/app-data';
 import { ApiFactory } from './_services/api-factory';
+import { ChangePasswordComponent } from './modal/change-password/change-password.component';
+import { MyLoaderComponent } from './my-loader/my-loader.component';
+import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { LoaderService } from './_services/loader.service';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   imports: [
     BrowserModule,
@@ -62,7 +67,13 @@ import { ApiFactory } from './_services/api-factory';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 1000,
+    positionClass: 'toast-top-center',
+    preventDuplicates: true,
+    }),
+    
   ],
   declarations: [
     AppComponent,
@@ -71,11 +82,15 @@ import { ApiFactory } from './_services/api-factory';
     P500Component,
     LoginComponent,
     RegisterComponent,
+    ChangePasswordComponent,
+    MyLoaderComponent,
   ],
   providers: [
     AppData,
     ApiFactory,
     // {provide: LocationStrategy,useClass: HashLocationStrategy}
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [ AppComponent ]
 })

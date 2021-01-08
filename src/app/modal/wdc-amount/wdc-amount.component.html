@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Available Balance: {{balanceAmout}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    
+        <form [formGroup]="wdcForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+            <input type="number" class="form-control input-sm" formControlName="chip_amount" [ngClass]="{ 'is-invalid': submitted && f.chip_amount.errors || f.chip_amount.errors?.max }" placeholder="Chip Amount">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <select id="select1" name="select1" class="form-control" formControlName="chip_type">
+                            <option value="">Select</option>
+                            <option value="1">Deposit</option>
+                            <option value="2">Withdraw</option>
+                            <option value="3">Commission</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="Remarks"
+                        formControlName="remarks" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <button  [disabled]="loading" type="submit" class="btn btn-block btn-primary active"> 
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> Submit</button>
+                </div>
+            </div>
+           
+         
+        </form>
+</div>

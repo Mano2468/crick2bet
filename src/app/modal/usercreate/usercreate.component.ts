@@ -32,7 +32,8 @@ export class UsercreateComponent implements OnInit {
       user_password : ['', Validators.required],
       user_type :['',Validators.required],
       address:['',Validators.required],
-      user_login_id:['',Validators.required]
+      user_login_id:['',Validators.required],
+      chips:['',Validators.required]
     });
   }
   get f() { return this.createUser.controls; }

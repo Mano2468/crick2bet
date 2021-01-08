@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
+import { SettingModule } from './setting/setting.module';
 import { SportsInnerModule } from './sportsInner/sports-inner.module';
 import { UsersModule } from './users/users.module';
 import { P404Component } from './views/error/404.component';
@@ -71,6 +72,12 @@ const routes: Routes = [
         loadChildren: () => import('./users/users.module').then(m => UsersModule),
         canActivate: [AuthGuard],
         data: { roles: [Role.Admin,Role.Master,Role.SuperAdmin,Role.Dealer] }
+      },
+      {
+        path: "setting",
+        loadChildren: () => import('./setting/setting.module').then(m => SettingModule),
+        canActivate: [AuthGuard],
+        data: { roles: [Role.Admin] }
       }
       , {
         path: "",
