@@ -1,0 +1,123 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Soccer</strong>
+
+                </div>
+                <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="form-group col-sm-3">
+                                <label for="minstake">GAME TYPE</label>
+                                <select id="select1" name="select1" formControlName="game_type" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.game_type.errors }" (change)="changeGame($event)">
+                                    <option value="" disabled>Select</option>
+                                    <option value="1">Soccer</option>
+                                    <option value="2">Tennis</option>
+                                    <option value="3">Cricket</option>
+                                </select>
+                                <!-- <div *ngIf="f.game_type.touched && f.game_type.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.game_type.errors">Selct Game.</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-3">
+                                <label for="minstake">MIN STAKE</label>
+                                <input type="number" class="form-control" formControlName="min_stake"
+                                    [ngClass]="{ 'is-invalid': submitted && f.min_stake.errors }"
+                                    placeholder="Enter min stake">
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="maxstake">MAX STAKE</label>
+                                <input type="number" class="form-control" formControlName="max_stake"
+                                    [ngClass]="{ 'is-invalid': submitted && f.max_stake.errors }"
+                                    placeholder="Enter max stake">
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="maxprofit">MAX PROFIT</label>
+                                    <input type="number" class="form-control" formControlName="max_profit"
+                                        [ngClass]="{ 'is-invalid': submitted && f.max_profit.errors }"
+                                        placeholder="Enter max profit">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="minprofit">MIN PROFIT</label>
+                                <input type="number" class="form-control" formControlName="min_profit"
+                                    [ngClass]="{ 'is-invalid': submitted && f.min_profit.errors }"
+                                    placeholder="Enter min profit">
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-sm-3">
+                                <label for="betdelay">BET DELAY</label>
+                                <input type="number" class="form-control" formControlName="bet_delay"
+                                    [ngClass]="{ 'is-invalid': submitted && f.bet_delay.errors }"
+                                    placeholder="Enter bet delay">
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="preinplayprofit">PRE INPLAY PROFIT</label>
+                                    <input type="number" class="form-control" formControlName="pre_inply_profit"
+                                        [ngClass]="{ 'is-invalid': submitted && f.pre_inply_profit.errors }"
+                                        placeholder="Enter inplay profit">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="preinplaystake">PRE INPLAY STAKE</label>
+                                <input type="number" class="form-control" formControlName="pre_inply_stake"
+                                    [ngClass]="{ 'is-invalid': submitted && f.pre_inply_stake.errors }"
+                                    placeholder="Enter inplay stake">
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="minodds">MIN ODDS</label>
+                                <input type="number" class="form-control" formControlName="min_odds"
+                                    [ngClass]="{ 'is-invalid': submitted && f.min_odds.errors }"
+                                    placeholder="Enter min odds">
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="maxodds">MAX ODDS</label>
+                                    <input type="number" class="form-control" formControlName="max_odds"
+                                        [ngClass]="{ 'is-invalid': submitted && f.max_odds.errors }"
+                                        placeholder="Enter max odds">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="unmatchbet">UNMATCH BET</label>
+                                <select class="form-control" class="form-control">
+                                <option value="2">NO</option>
+                                <option value="1">YES</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="minutecheck">30 MINUTES CHECK</label>
+                                <select class="form-control" id="ccmonth" >
+                                    <option value="2">NO</option>
+                                    <option value="1">YES</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--/.row-->
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary"><span *ngIf="loading"
+                                class="spinner-border spinner-border-sm mr-1"></span> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+
+</div>

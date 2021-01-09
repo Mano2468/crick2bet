@@ -34,26 +34,34 @@
       <a class="nav-link" href="javascript:void(0)"><img src="assets/img/wallet-icons.png">
       </a>
     </li>
-    <li class="nav-item d-md-down-none" style="padding-right: 15px;">
+    <li class="nav-item d-md-down-none"  style="padding-right: 10px;">
       <a class="nav-link" href="javascript:void(0)">
-          <span style="margin-right: 20px;"> Main: {{user.chip_amts}} </span><br>
-          <span> Exposure: <span style="color: red;">0.00</span> &nbsp;</span>
+          <span style="float: left;"> Main: {{user.chip_amts}} </span><br>
+          <span style="display: block;"> Exposure: <span style="color: red;">0.00</span> &nbsp;</span>
       </a>
     </li>
-    <li class="nav-item dropdown" dropdown placement="bottom right">
+    <li class="nav-item" style="padding-right: 10px;">
+      <a class="nav-link"  href="javascript:void(0)" (click)="toggleAsidrBar()">
+        <span>
+          <i class="fa fa-user"></i>
+        </span>
+        <span style="display: block;text-transform: capitalize;">{{user.username}}  <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+      </a>
+    
+    </li>
+    <!-- <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-        <!-- <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"/> -->
         <i class="fa fa-user" aria-hidden="true"></i>
       </a>
-      <strong style="padding-right: 10px;color: #fff;">{{user.username}}</strong>
+      <strong style="padding-right: 10px;color: #fff;">{{user.username}} <i class="fa fa-caret-down" aria-hidden="true"></i></strong>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="simple-dropdown">
-        <!-- <div class="dropdown-header text-center"><strong>Account</strong></div>
+        <div class="dropdown-header text-center"><strong>Account</strong></div>
         <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
         <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
         <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span class="badge badge-warning">42</span></a> -->
+        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span class="badge badge-warning">42</span></a>
         <div class="dropdown-header text-center"><strong>{{user.username}}</strong></div>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="profile()"><i class="fa fa-user" ></i> Profile</a>
         <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
         <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Balance<span class="badge badge-primary">{{user.chip_amts}}</span></a>
         <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
@@ -61,7 +69,7 @@
         <a class="dropdown-item" (click)="changePassword()"><i class="fa fa-shield"></i> Change Password</a>
         <a class="dropdown-item" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
       </div>
-    </li>
+    </li> -->
   </ul>
 </app-header>
 <div class="app-body">
@@ -106,254 +114,68 @@
     </div><!-- /.container-fluid -->
   </main>
   <app-aside [fixed]="true" [display]="false" [ngClass]="'test'">
-    <tabset>
-      <tab>
-        <ng-template tabHeading><i class="icon-list"></i></ng-template>
-        <div class="list-group list-group-accent">
-          <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Today</div>
-          <div class="list-group-item list-group-item-accent-warning list-group-item-divider">
-            <div class="avatar float-right">
-              <img class="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
-            </div>
-            <div>Meeting with
-              <strong>Lucas</strong>
-            </div>
-            <small class="text-muted mr-3">
-              <i class="icon-calendar"></i>  1 - 3pm</small>
-            <small class="text-muted">
-              <i class="icon-location-pin"></i>  Palo Alto, CA</small>
-          </div>
-          <div class="list-group-item list-group-item-accent-info">
-            <div class="avatar float-right">
-              <img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
-            </div>
-            <div>Skype with
-              <strong>Megan</strong>
-            </div>
-            <small class="text-muted mr-3">
-              <i class="icon-calendar"></i>  4 - 5pm</small>
-            <small class="text-muted">
-              <i class="icon-social-skype"></i>  On-line</small>
-          </div>
-          <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Tomorrow</div>
-          <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
-            <div>New UI Project -
-              <strong>deadline</strong>
-            </div>
-            <small class="text-muted mr-3">
-              <i class="icon-calendar"></i>  10 - 11pm</small>
-            <small class="text-muted">
-              <i class="icon-home"></i>  creativeLabs HQ</small>
-            <div class="avatars-stack mt-2">
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-accent-success list-group-item-divider">
-            <div>
-              <strong>#10 Startups.Garden</strong> Meetup</div>
-            <small class="text-muted mr-3">
-              <i class="icon-calendar"></i>  1 - 3pm</small>
-            <small class="text-muted">
-              <i class="icon-location-pin"></i>  Palo Alto, CA</small>
-          </div>
-          <div class="list-group-item list-group-item-accent-primary list-group-item-divider">
-            <div>
-              <strong>Team meeting</strong>
-            </div>
-            <small class="text-muted mr-3">
-              <i class="icon-calendar"></i>  4 - 6pm</small>
-            <small class="text-muted">
-              <i class="icon-home"></i>  creativeLabs HQ</small>
-            <div class="avatars-stack mt-2">
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-              <div class="avatar avatar-xs">
-                <img class="img-avatar" src="assets/img/avatars/8.jpg" alt="admin@bootstrapmaster.com">
-              </div>
-            </div>
-          </div>
+    <div class="p-3">
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-university" aria-hidden="true"></i> &nbsp; Balance Information</span>
         </div>
-      </tab>
-      <tab>
-        <ng-template tabHeading><i class="icon-speech"></i></ng-template>
-        <div class="p-3">
-          <div class="message">
-            <div class="py-3 pb-5 mr-3 float-left">
-              <div class="avatar">
-                <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                <span class="avatar-status badge-success"></span>
-              </div>
-            </div>
-            <div>
-              <small class="text-muted">Lukasz Holeczek</small>
-              <small class="text-muted float-right mt-1">1:52 PM</small>
-            </div>
-            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
-          </div>
-          <hr>
-          <div class="message">
-            <div class="py-3 pb-5 mr-3 float-left">
-              <div class="avatar">
-                <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                <span class="avatar-status badge-success"></span>
-              </div>
-            </div>
-            <div>
-              <small class="text-muted">Lukasz Holeczek</small>
-              <small class="text-muted float-right mt-1">1:52 PM</small>
-            </div>
-            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
-          </div>
-          <hr>
-          <div class="message">
-            <div class="py-3 pb-5 mr-3 float-left">
-              <div class="avatar">
-                <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                <span class="avatar-status badge-success"></span>
-              </div>
-            </div>
-            <div>
-              <small class="text-muted">Lukasz Holeczek</small>
-              <small class="text-muted float-right mt-1">1:52 PM</small>
-            </div>
-            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
-          </div>
-          <hr>
-          <div class="message">
-            <div class="py-3 pb-5 mr-3 float-left">
-              <div class="avatar">
-                <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                <span class="avatar-status badge-success"></span>
-              </div>
-            </div>
-            <div>
-              <small class="text-muted">Lukasz Holeczek</small>
-              <small class="text-muted float-right mt-1">1:52 PM</small>
-            </div>
-            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
-          </div>
-          <hr>
-          <div class="message">
-            <div class="py-3 pb-5 mr-3 float-left">
-              <div class="avatar">
-                <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                <span class="avatar-status badge-success"></span>
-              </div>
-            </div>
-            <div>
-              <small class="text-muted">Lukasz Holeczek</small>
-              <small class="text-muted float-right mt-1">1:52 PM</small>
-            </div>
-            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
-          </div>
+        <div>
+          <small class="text-muted">Total Credit: </small>
+          <small class="text-muted float-right mt-1 font-weight-bold">{{user.chip_amts}}</small>
         </div>
-      </tab>
-      <tab>
-        <ng-template tabHeading><i class="icon-settings"></i></ng-template>
-        <div class="p-3">
-          <h6>Settings</h6>
-          <div class="aside-options">
-            <div class="clearfix mt-4">
-              <small><b>Option 1</b></small>
-              <label class="switch switch-label switch-pill switch-success switch-sm float-right">
-                <input type="checkbox" class="switch-input" checked>
-                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-              </label>
-            </div>
-            <div>
-              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-          </div>
-          <div class="aside-options">
-            <div class="clearfix mt-3">
-              <small><b>Option 2</b></small>
-              <label class="switch switch-label switch-pill switch-success switch-sm float-right">
-                <input type="checkbox" class="switch-input">
-                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-              </label>
-            </div>
-            <div>
-              <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-          </div>
-          <div class="aside-options">
-            <div class="clearfix mt-3">
-              <small><b>Option 3</b></small>
-              <label class="switch switch-label switch-pill switch-success switch-sm float-right">
-                <input type="checkbox" class="switch-input">
-                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-                <span class="switch-handle"></span>
-              </label>
-            </div>
-          </div>
-          <div class="aside-options">
-            <div class="clearfix mt-3">
-              <small><b>Option 4</b></small>
-              <label class="switch switch-label switch-pill switch-success switch-sm float-right">
-                <input type="checkbox" class="switch-input" checked>
-                <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-              </label>
-            </div>
-          </div>
-          <hr>
-          <h6>System Utilization</h6>
-          <div class="text-uppercase mb-1 mt-4"><small><b>CPU Usage</b></small></div>
-          <div class="progress progress-xs">
-            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <small class="text-muted">348 Processes. 1/4 Cores.</small>
-          <div class="text-uppercase mb-1 mt-2"><small><b>Memory Usage</b></small></div>
-          <div class="progress progress-xs">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <small class="text-muted">11444GB/16384MB</small>
-          <div class="text-uppercase mb-1 mt-2"><small><b>SSD 1 Usage</b></small></div>
-          <div class="progress progress-xs">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <small class="text-muted">243GB/256GB</small>
-          <div class="text-uppercase mb-1 mt-2"><small><b>SSD 2 Usage</b></small></div>
-          <div class="progress progress-xs">
-            <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <small class="text-muted">25GB/256GB</small>
+        <div>
+          <small class="text-muted">Available Limit: </small>
+          <small class="text-muted float-right mt-1 font-weight-bold">0.00</small>
         </div>
-      </tab>
-    </tabset>
+        <div>
+          <small class="text-muted">Net Exposure: </small>
+          <small class="text-danger float-right mt-1 font-weight-bold" >0.00</small>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-list" aria-hidden="true"></i> &nbsp; Open Bets</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-money" aria-hidden="true"></i> &nbsp; Betting P&L</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-money" aria-hidden="true"></i> &nbsp; Account Statement</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Transfer Statement</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 ">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Betting History</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 " (click)="changePassword()">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp; Change Password</span>
+        </div>
+      </div>
+      <hr>
+      <div class="message">
+        <div class="mr-3 " (click)="logout()">
+          <span class="text-truncate font-weight-bold"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Sign Out</span>
+        </div>
+      </div>
+      
+    </div>
+    
   </app-aside>
 </div>

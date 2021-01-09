@@ -13,11 +13,11 @@ import { Role } from './_models';
 
 
 const routes: Routes = [
-  //   {
-  //   path: '',
-  //   redirectTo: 'login',
-  //   pathMatch: 'full',
-  // },
+    {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
     path: '404',
     component: P404Component,

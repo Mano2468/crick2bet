@@ -20,7 +20,7 @@ export class AuthenticationService {
         this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
         this.user = this.userSubject.asObservable();
         this.marqueeMsg = new EventEmitter<any>();
-        if(JSON.parse(localStorage.getItem('message'))){
+        if(localStorage.getItem('message')){
             console.log("hi............")
             this.marqueeMsg.emit(JSON.parse(localStorage.getItem('message')).name);
         }
@@ -53,6 +53,8 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('user');
+        localStorage.removeItem('message');
+        localStorage.removeItem('masterData');
         this.userSubject.next(null);
         this.router.navigate(['/login']);
         window.location.reload();

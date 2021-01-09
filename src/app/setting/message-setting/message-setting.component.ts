@@ -4,11 +4,11 @@ import { ApiFactory } from '@app/_services/api-factory';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.scss']
+  selector: 'message-setting',
+  templateUrl: './message-setting.component.html',
+  styleUrls: ['./message-setting.component.scss']
 })
-export class SettingComponent implements OnInit {
+export class MessageSettingComponent implements OnInit {
   message:string;
   constructor(private apiFactory:ApiFactory,private authenticationService:AuthenticationService,private toastr:ToastrService) { 
     this.getMessage();

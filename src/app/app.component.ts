@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router) { this.clearStorage() }
 
   ngOnInit() {
     this.router.events.subscribe((evt) => {
@@ -16,6 +16,18 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+  }
+
+  clearStorage() {
+
+    let session = sessionStorage.getItem('active');
+
+    if (session == null) {
+
+      localStorage.clear();
+
+    }
+    sessionStorage.setItem('active', 'yes');
   }
 }
 

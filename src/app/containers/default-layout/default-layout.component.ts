@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { ChangePasswordComponent } from '@app/modal/change-password/change-password.component';
 import { Role } from '@app/_models';
 import { AuthenticationService } from '@app/_services';
+import { ApiFactory } from '@app/_services/api-factory';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { navItems } from '../../_nav';
 
@@ -15,10 +16,16 @@ export class DefaultLayoutComponent implements OnInit{
   user;
   modalRef: BsModalRef | null;
   message:any;
-  constructor(private modalService: BsModalService,private authenticationService: AuthenticationService) {
+  toggleAside:boolean = false;
+  constructor(private modalService: BsModalService,private authenticationService: AuthenticationService,private apiFactory:ApiFactory) {
     this.user = JSON.parse(localStorage.getItem('user'));
-    this.message = JSON.parse(localStorage.getItem('message')).name;
-    console.log(this.message)
+    if(localStorage.getItem('message')){
+      this.message = JSON.parse(localStorage.getItem('message')).name;
+      console.log(this.message)
+    }else{
+      this.getMessage();
+    }
+
     if(this.user.usertype.trim()==Role.User){
       for(let n in navItems){
         console.log(n);
@@ -65,5 +72,29 @@ export class DefaultLayoutComponent implements OnInit{
       initialState, backdrop: "static",
       keyboard: false, class: 'modal-dialog-centered',
     });
+  }
+   
+
+  getMessage(){
+    this.apiFactory.getMessage()
+    .subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('message', JSON.stringify(res.nbdata[0]));
+        this.message = res.nbdata[0].name;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  toggleAsidrBar(){
+    this.toggleAside = !this.toggleAside;
+    if(this.toggleAside){
+      document.querySelector('body').classList.add('aside-menu-show');
+    }else{
+      document.querySelector('body').classList.remove('aside-menu-show');
+    }
+    
   }
 }

@@ -23,7 +23,17 @@ export const navItems: INavData[] = [
   {
     name: "Setting",
     url: '/setting',
-    icon: 'icon-settings'
+    icon: 'icon-settings',
+    children:[
+      {
+        name: 'Message Setting',
+        url: '/setting/message_setting',
+      },
+      {
+        name: 'Match Setting',
+        url: '/setting/match_setting',
+      }
+    ]
   },
   {
     name: 'Pages',

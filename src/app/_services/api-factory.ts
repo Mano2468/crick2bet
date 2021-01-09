@@ -85,5 +85,13 @@ export class ApiFactory {
         return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=7').pipe(map(res => res));
     }
 
+    setMatchSetting(data): Observable<any> {
+
+        return this.postUrl(`${environment.apiUrl}` + '/masterset.php?flag=10', data).pipe(map(res => res));
+    }
+    getMatchSetting(id): Observable<any> {
+        return this.getUrl(`${environment.apiUrl}` + '/masterset.php?flag=9&gameid='+id).pipe(map(res => res));
+    }
+
 
 }  

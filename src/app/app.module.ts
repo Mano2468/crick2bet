@@ -88,7 +88,7 @@ import { ToastrModule } from 'ngx-toastr';
   providers: [
     AppData,
     ApiFactory,
-    // {provide: LocationStrategy,useClass: HashLocationStrategy}
+    {provide: LocationStrategy,useClass: HashLocationStrategy},
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],

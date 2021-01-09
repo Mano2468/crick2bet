@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
         data => {
           if (data.status == "success") {
             this.router.navigate(['/dashboard']);
+           
             this.getMasterData();
           } else{this.router.navigate([this.returnUrl]); this.loading = false; this.error = data.message;}
 
@@ -75,25 +76,14 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('masterData', JSON.stringify(res.nbdata));
-          this.getMessage();
+         
         },
         err => {
           console.log(err);
         }
       );
   }
-  getMessage(){
-    this.apiFactory.getMessage()
-    .subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem('message', JSON.stringify(res.nbdata[0]));
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+ 
   dashBoard() {
     this.router.navigate(['/dashboard']);
   }

@@ -1,15 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SettingComponent } from './setting.component';
+import { MatchSettingComponent } from './match-setting/match-setting.component';
+import { MessageSettingComponent } from './message-setting/message-setting.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: SettingComponent,
     data: {
       title: 'Setting'
-    }
+    },
+    children: [
+      {
+        path: '',
+        redirectTo: 'message_setting'
+      },
+      {
+        path: 'message_setting',
+        component: MessageSettingComponent,
+        data: {
+          title: 'Message Setting'
+        }
+      },
+      {
+        path: 'match_setting',
+        component: MatchSettingComponent,
+        data: {
+          title: 'Match Setting'
+        }
+      },
+    ],
   }
 ];
 

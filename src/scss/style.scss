@@ -64,21 +64,22 @@
     padding: 8px;
     border-bottom: 1px solid #6c757d;
 }
-.nav-tabs .nav-link{
+
+.dashboard-tab .nav-tabs .nav-link{
     border-color: #c8ced3 ;
 }
-.nav-tabs .nav-link.active {
+.dashboard-tab .nav-tabs .nav-link.active {
     color: #f0f3f5;
     background: #344db5 !important;
    
 }
 
-.nav-tabs {
+.dashboard-tab .nav-tabs {
     border-bottom: 1px solid #c8ced3;
     background: #fff;
    
 }
-.nav-tabs > li {
+.dashboard-tab .nav-tabs > li {
     width: 120px;
     text-align: center;
 }
@@ -90,7 +91,7 @@
         color: white;
         background: rgba(25, 25, 189, 0.63);
     }
-    .nav-tabs.match-buttons li {
+    .dashboard-tab .nav-tabs.match-buttons li {
         width: 32%;
         float: left;
         margin-left: 3px;
